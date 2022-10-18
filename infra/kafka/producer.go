@@ -1,6 +1,7 @@
 package kafka
 
 import (
+	"fmt"
 	"log"
 	"os"
 
@@ -20,9 +21,11 @@ func NewKafkaProducer() *ckafka.Producer {
 
 func Publish(msg string, topic string, producer *ckafka.Producer) error {
 	message := &ckafka.Message{
-		TopicPartition: ckafka.TopicPartition{Topic: &topic, Partition: ck},
+		TopicPartition: ckafka.TopicPartition{Topic: &topic, Partition: ckafka.PartitionAny},
 		Value:          []byte(msg),
 	}
+	fmt.Println("publicado: " + msg + " topic: " + topic)
+
 	err := producer.Produce(message, nil)
 	if err != nil {
 		return err
