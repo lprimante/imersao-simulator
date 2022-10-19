@@ -1,4 +1,4 @@
-module github.com/lprimante/imersao-simulator
+module github.com/lprimante/imersao-simulator/simulator-aluno
 
 go 1.16
 
