@@ -11,6 +11,7 @@ import (
 	"github.com/lprimante/imersao-simulator/simulator-aluno/infra/kafka"
 )
 
+// {"ClientId": "1", "RouteId": "1"}
 func Produce(msg *ckafka.Message) {
 	producer := kafka.NewKafkaProducer()
 	route := route2.NewRoute()
